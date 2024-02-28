@@ -14,7 +14,9 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin : ["http://localhost:3000", "https://JobSearch-frontend.onrender.com"],
+}));
 app.use(express.static(path.join(__dirname + "/public")))
 // account password : sanju@1234
 //password : subhadeepkhan1234
